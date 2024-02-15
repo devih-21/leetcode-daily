@@ -3,12 +3,19 @@
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    let p = 1;
-    for (let i = 0; i < nums.length - 1; i++){
-        if (nums[i] !== nums[i+1]) {
-            nums[p]=nums[i+1];
-            p++
+  let [left, right] = [0, 0];
+
+    while (right < nums.length) {
+        const [leftVal, rightVal] = [nums[left], nums[right]];
+
+        const isEqual = (rightVal === leftVal);
+        if (!isEqual) {
+            left++;
+            nums[left] = rightVal;
         }
+
+        right++;
     }
-    return p
+
+    return (left + 1);
 };
