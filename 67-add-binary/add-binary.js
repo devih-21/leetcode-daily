@@ -14,7 +14,6 @@ var addBinary = function(a, b) {
     let result = []
     for (let i = 0; i < maxLength; i++) {
         let newNum = (aArr?.[i] || 0) + (bArr?.[i] || 0) + temp;
-        console.log(newNum)
         if (newNum > 1) {
             result.push(newNum%2)
             temp = 1
