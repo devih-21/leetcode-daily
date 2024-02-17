@@ -3,11 +3,11 @@
  * @return {number}
  */
 var lengthOfLastWord = function(s) {
-    if (!s.includes(" ")) return s.length;
-    let newStr = s.trim()
-    while (newStr.includes("  ")) {
-        newStr = newStr.replaceAll("  ", " ")
+   const words = s.split(' ');
+    for (let i  = words.length - 1; i > -1; i--) {
+        if (words[i].length > 0) {
+            return words[i].length;
+        }
     }
-
-    return newStr.split(" ")[newStr.split(" ").length - 1].length
+    return 0
 };
