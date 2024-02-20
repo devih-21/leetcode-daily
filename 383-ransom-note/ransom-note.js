@@ -7,8 +7,7 @@ var canConstruct = function(ransomNote, magazine) {
     if (ransomNote.length === 1 && magazine.length === 1 && ransomNote !== magazine) return false
     let mappingRansom = {};
     for (let i = 0; i < magazine.length; i++) {
-        const char = magazine[i];
-        mappingRansom[char] ? mappingRansom[magazine[i]]++ : mappingRansom[magazine[i]] = 1;
+        mappingRansom[magazine[i]] ? mappingRansom[magazine[i]]++ : mappingRansom[magazine[i]] = 1;
     }
 
     for (let i = 0; i < ransomNote.length; i++) {
