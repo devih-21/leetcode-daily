@@ -14,9 +14,8 @@ var canConstruct = function(ransomNote, magazine) {
             if (mappingRansom?.[ransomNote[i]]) {
                 mappingRansom[ransomNote[i]]--;
             } else {
-                mappingRansom[ransomNote[i]] = -1;
+                return false
             }
         }
-        if (Object.values(mappingRansom).some(item => item < 0)) return false
-        return true
+    return true
 };
