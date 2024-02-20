@@ -17,7 +17,6 @@ var canConstruct = function(ransomNote, magazine) {
                 mappingRansom[ransomNote[i]] = -1;
             }
         }
-        let arr = Object.values(mappingRansom);
-        if (arr.some(item => item < 0)) return false
+        if (Object.values(mappingRansom).some(item => item < 0)) return false
         return true
 };
