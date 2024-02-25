@@ -23,7 +23,6 @@ var isAnagram = function(s, t) {
         if (code in cache){
             cache[code] = cache[code] -= 1;
         } else {
-            // t has a char that s doesn't have
             return false;
         }
     }
