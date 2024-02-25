@@ -4,7 +4,29 @@
  * @return {boolean}
  */
 var isAnagram = function(s, t) {
-        if (s.length !== t.length) return false;
+    if (s.length !== t.length) return false;
 
-    return t.split("").sort().join("") === s.split("").sort().join("")
+    const cache = {};
+    for (let i = 0; i < s.length; i++){
+        const char = s[i];
+        const code = char.charCodeAt(0);
+        if (code in cache){
+            cache[code] = cache[code] += 1;
+        } else {
+            cache[code] = 1;
+        }
+    }
+
+    for (let i = 0; i < t.length; i++){
+        const char = t[i];
+        const code = char.charCodeAt(0);
+        if (code in cache){
+            cache[code] = cache[code] -= 1;
+        } else {
+            // t has a char that s doesn't have
+            return false;
+        }
+    }
+
+    return Object.values(cache).every(val => val === 0)
 };
