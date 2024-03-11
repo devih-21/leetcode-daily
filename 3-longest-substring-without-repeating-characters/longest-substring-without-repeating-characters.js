@@ -12,8 +12,6 @@ var lengthOfLongestSubstring = function(s) {
                 continue;
             } else {
                 if (j === [...new Set([...str])].length) {
-            console.log("str", maxStr)
-
                     maxStr = str
                 }
             }
